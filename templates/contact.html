@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Contact US{% endblock title %}
+{% block body %}
+<style>
+    body {
+      background-image: url("/static/contactBg.jfif");
+    }
+  </style>
+<div class="container my-5">
+    <h1 class="text-center">Contact Us</h1>
+</div>
+<div class="container px-5">
+    <form method="POST" action="/contact">
+        {% csrf_token %}
+        <div class="form-group my-5">
+            <input type="text" class=form-control id="name" name="name" placeholder="Enter Your Name">
+        </div>
+
+        <div class="form-group my-5">
+            <input type="email" class=form-control id="email" name="email" placeholder="xyz@domain.com">
+        </div>
+
+        <div class="form-group my-5">
+            <input type="phone" class=form-control id="phone" name="phone" placeholder="+1-236-965-659">
+        </div>
+
+        <div class="form-group my-5">
+            <textarea class="form-control" id="desc" name="desc" rows="3" placeholder="Enter Your message"></textarea>
+        </div>
+        <div style="margin-left: 50%;">
+        <button class="btn btn-primary" type="submit">Submit</button></div>
+
+    </form>
+</div>
+
+{% endblock body %}
